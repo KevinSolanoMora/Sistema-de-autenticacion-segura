@@ -216,15 +216,6 @@ Ejecuta:
 - [Checklist de publicacion](docs/PUBLISHING.md)
 - [Manifiestos Kubernetes](k8s/README.md)
 
-## Como explicarlo en entrevistas
-
-> Disene un sistema de autenticacion segura con Node.js y Python. Implemente
-> Argon2, JWT de corta duracion, refresh tokens rotativos, MFA con TOTP,
-> verificacion de email, recuperacion segura de password, rate limiting,
-> bloqueo por fuerza bruta y auditoria. Tambien separe un microservicio
-> Python para scoring de riesgo e IPs sospechosas, y agregue Docker,
-> Kubernetes y CI para demostrar buenas practicas de despliegue.
-
 ## Limitaciones conocidas
 
 - Usa JSON local para demo; PostgreSQL seria el siguiente paso productivo.
