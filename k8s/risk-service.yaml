@@ -1,0 +1,53 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: risk-service
+  namespace: secure-auth
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: risk-service
+  template:
+    metadata:
+      labels:
+        app: risk-service
+    spec:
+      containers:
+        - name: risk-service
+          image: secure-auth-risk-service:local
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 8000
+          env:
+            - name: THREAT_INTEL_URL
+              valueFrom:
+                configMapKeyRef:
+                  name: secure-auth-config
+                  key: THREAT_INTEL_URL
+          readinessProbe:
+            httpGet:
+              path: /health
+              port: 8000
+            initialDelaySeconds: 5
+            periodSeconds: 10
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: 8000
+            initialDelaySeconds: 15
+            periodSeconds: 20
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: risk-service
+  namespace: secure-auth
+spec:
+  type: ClusterIP
+  selector:
+    app: risk-service
+  ports:
+    - name: http
+      port: 8000
+      targetPort: 8000

@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: secure-auth-config
+  namespace: secure-auth
+data:
+  PORT: "3000"
+  JWT_ISSUER: "sistema-auth-segura"
+  JWT_AUDIENCE: "portfolio-users"
+  DATABASE_PATH: "/app/data/auth.json"
+  PYTHON_RISK_SERVICE_URL: "http://risk-service:8000"
+  APP_URL: "http://localhost:3000"
+  DEV_EXPOSE_TOKENS: "false"
+  THREAT_INTEL_URL: ""

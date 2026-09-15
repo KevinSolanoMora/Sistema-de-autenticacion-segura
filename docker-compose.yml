@@ -1,0 +1,28 @@
+services:
+  auth-api:
+    build: .
+    ports:
+      - "127.0.0.1:3000:3000"
+    environment:
+      PORT: 3000
+      JWT_SECRET: "${JWT_SECRET:?Define JWT_SECRET before running docker compose}"
+      JWT_ISSUER: "sistema-auth-segura"
+      JWT_AUDIENCE: "portfolio-users"
+      DATABASE_PATH: "/app/data/auth.json"
+      PYTHON_RISK_SERVICE_URL: "http://risk-service:8000"
+      APP_URL: "http://localhost:3000"
+      DEV_EXPOSE_TOKENS: "false"
+    volumes:
+      - auth-data:/app/data
+    depends_on:
+      - risk-service
+
+  risk-service:
+    build: ./python-risk-service
+    environment:
+      THREAT_INTEL_URL: "${THREAT_INTEL_URL:-}"
+    expose:
+      - "8000"
+
+volumes:
+  auth-data:

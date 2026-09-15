@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="640" viewBox="0 0 1120 640" role="img" aria-labelledby="title desc">
+  <title id="title">Arquitectura del sistema de autenticacion segura</title>
+  <desc id="desc">Diagrama con cliente web, API Node.js, base local, servicio Python de riesgo, Docker y Kubernetes.</desc>
+  <defs>
+    <style>
+      .bg { fill: #f6f7f9; }
+      .card { fill: #ffffff; stroke: #d9e0e8; stroke-width: 2; rx: 10; }
+      .title { fill: #101828; font: 700 26px Arial, sans-serif; }
+      .label { fill: #101828; font: 700 18px Arial, sans-serif; }
+      .text { fill: #475467; font: 14px Arial, sans-serif; }
+      .small { fill: #667085; font: 12px Arial, sans-serif; }
+      .accent { fill: #0f766e; }
+      .line { stroke: #0f766e; stroke-width: 3; fill: none; marker-end: url(#arrow); }
+    </style>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M2,2 L10,6 L2,10 Z" fill="#0f766e" />
+    </marker>
+  </defs>
+
+  <rect class="bg" width="1120" height="640" />
+  <text class="title" x="56" y="64">Sistema de autenticacion segura</text>
+  <text class="text" x="56" y="92">Portafolio de ciberseguridad: autenticacion, auditoria, riesgo y despliegue local.</text>
+
+  <rect class="card" x="56" y="150" width="220" height="150" />
+  <circle class="accent" cx="92" cy="190" r="14" />
+  <text class="label" x="116" y="196">Cliente web</text>
+  <text class="text" x="84" y="234">Registro, login,</text>
+  <text class="text" x="84" y="256">dashboard y auditoria</text>
+
+  <rect class="card" x="420" y="128" width="280" height="196" />
+  <circle class="accent" cx="456" cy="168" r="14" />
+  <text class="label" x="480" y="174">Node.js Auth API</text>
+  <text class="text" x="448" y="212">Argon2, JWT corto, refresh</text>
+  <text class="text" x="448" y="234">tokens rotativos, MFA TOTP,</text>
+  <text class="text" x="448" y="256">rate limiting y bloqueo</text>
+  <text class="small" x="448" y="292">Express + Helmet + Zod + Jose</text>
+
+  <rect class="card" x="820" y="150" width="240" height="150" />
+  <circle class="accent" cx="856" cy="190" r="14" />
+  <text class="label" x="880" y="196">FastAPI Risk</text>
+  <text class="text" x="848" y="234">Scoring de riesgo</text>
+  <text class="text" x="848" y="256">e IPs sospechosas</text>
+
+  <rect class="card" x="420" y="420" width="280" height="128" />
+  <circle class="accent" cx="456" cy="458" r="14" />
+  <text class="label" x="480" y="464">Persistencia local</text>
+  <text class="text" x="448" y="502">Usuarios, hashes, tokens</text>
+  <text class="text" x="448" y="524">y eventos de auditoria</text>
+
+  <rect class="card" x="820" y="420" width="240" height="128" />
+  <circle class="accent" cx="856" cy="458" r="14" />
+  <text class="label" x="880" y="464">DevOps</text>
+  <text class="text" x="848" y="502">Docker Compose</text>
+  <text class="text" x="848" y="524">Kubernetes local + CI</text>
+
+  <path class="line" d="M276 225 C330 225, 350 225, 414 225" />
+  <path class="line" d="M700 225 C752 225, 772 225, 814 225" />
+  <path class="line" d="M560 324 L560 414" />
+  <path class="line" d="M700 484 C748 484, 772 484, 814 484" />
+
+  <text class="small" x="324" y="208">HTTPS/JSON</text>
+  <text class="small" x="724" y="208">Riesgo login</text>
+  <text class="small" x="580" y="374">JSON demo</text>
+  <text class="small" x="718" y="466">Empaquetado</text>
+</svg>

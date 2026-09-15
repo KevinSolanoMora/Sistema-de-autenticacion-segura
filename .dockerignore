@@ -1,0 +1,5 @@
+node_modules
+data
+.env
+python-risk-service/.venv
+python-risk-service/__pycache__

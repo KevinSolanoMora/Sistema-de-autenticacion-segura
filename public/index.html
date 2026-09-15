@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Sistema de autenticacion segura</title>
+    <link rel="stylesheet" href="/app.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <section class="panel auth-panel">
+        <div>
+          <p class="eyebrow">Portafolio Cybersecurity</p>
+          <h1>Sistema de autenticacion segura</h1>
+        </div>
+
+        <form id="authForm" class="form">
+          <label>
+            Email
+            <input
+              id="email"
+              type="email"
+              value="demo@correo.com"
+              autocomplete="email"
+              required
+            />
+          </label>
+
+          <label>
+            Password
+            <input
+              id="password"
+              type="password"
+              value="PasswordSeguro123"
+              autocomplete="current-password"
+              required
+            />
+          </label>
+
+          <label>
+            MFA
+            <input
+              id="mfaCode"
+              inputmode="numeric"
+              placeholder="000000"
+              autocomplete="one-time-code"
+            />
+          </label>
+
+          <div class="actions">
+            <button type="button" id="registerBtn">Registrar</button>
+            <button type="button" id="verifyBtn">Verificar email</button>
+            <button type="submit" class="primary">Login</button>
+          </div>
+        </form>
+
+        <div class="token-box">
+          <span>Token demo</span>
+          <code id="devToken">Sin token pendiente</code>
+        </div>
+      </section>
+
+      <section class="workspace">
+        <div class="topbar">
+          <div>
+            <p class="eyebrow">Dashboard</p>
+            <h2>Control de seguridad</h2>
+          </div>
+
+          <div class="actions">
+            <button id="refreshBtn">Actualizar</button>
+            <button id="forgotBtn">Reset password</button>
+            <button id="logoutBtn">Cerrar sesiones</button>
+          </div>
+        </div>
+
+        <div class="grid" id="stats"></div>
+
+        <section class="panel table-panel">
+          <div class="section-heading">
+            <h3>Auditoria reciente</h3>
+            <span id="sessionState">Sin sesion</span>
+          </div>
+
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Evento</th>
+                  <th>Riesgo</th>
+                  <th>Fecha</th>
+                </tr>
+              </thead>
+              <tbody id="auditRows"></tbody>
+            </table>
+          </div>
+        </section>
+      </section>
+    </main>
+
+    <div id="toast" class="toast" hidden></div>
+    <script src="/app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,5 @@
+# Lista local de ejemplo para demo de threat intelligence.
+# En produccion se sincronizaria desde un proveedor confiable.
+203.0.113.0/24
+198.51.100.23/32
+192.0.2.45/32
