@@ -7,6 +7,10 @@ rate limiting y scoring de riesgo con un microservicio Python.
 
 ![Dashboard del sistema](docs/screenshots/login-dashboard.png)
 
+## Demo en video
+
+[Ver demo del sistema](docs/demo/demo-sistema-autenticacion-segura.mp4)
+
 ## Problema que resuelve
 
 Muchos proyectos de portafolio se quedan en un login basico. Este proyecto
